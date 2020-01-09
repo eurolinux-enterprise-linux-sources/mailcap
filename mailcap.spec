@@ -1,6 +1,6 @@
 Name:           mailcap
 Version:        2.1.31
-Release:        1.1%{?dist}
+Release:        2%{?dist}
 Summary:        Helper application and MIME type associations for file types
 
 Group:          System Environment/Base
@@ -9,6 +9,7 @@ URL:            http://git.fedoraproject.org/git/mailcap.git
 Source0:        https://fedorahosted.org/released/mailcap/%{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildArch:      noarch
+Patch1:         mailcap-webm.patch
 
 %description
 The mailcap file is used by the metamail program.  Metamail reads the
@@ -25,6 +26,7 @@ by several applications e.g. to determine MIME types for filenames.
 
 %prep
 %setup -q
+%patch1 -p1 -b .webm
 
 
 %build
@@ -52,6 +54,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Jun 03 2011 Miroslav Lichvar <mlichvar@redhat.com> - 2.1.31-2
+- add video/webm to mime.types (#610793)
+
 * Mon Nov 30 2009 Dennis Gregorovic <dgregor@redhat.com> - 2.1.31-1.1
 - Rebuilt for RHEL 6
 
