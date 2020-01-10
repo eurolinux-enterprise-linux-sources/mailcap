@@ -1,6 +1,6 @@
 Name:           mailcap
 Version:        2.1.41
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Helper application and MIME type associations for file types
 
 Group:          System Environment/Base
@@ -52,6 +52,9 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.1.41-2
+- Mass rebuild 2013-12-27
+
 * Tue May 14 2013 Ville Skyttä <ville.skytta@iki.fi> - 2.1.41-1
 - Update to 2.1.41.
 - Fix bogus dates in %%changelog.
